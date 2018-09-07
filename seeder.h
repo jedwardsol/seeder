@@ -23,12 +23,19 @@ private:
 template <typename RNG>
 void seed(RNG &rng)
 {
-    seed_seq_emulator   seeder;   
+    seed_seq_emulator   seeder;
     rng.seed(seeder);
-}
-        
+
+    for(int i=0;i<70'000;i++)
+    {
+        rng();
+    }
 
 }
 
-//std::mt19937 rng;
-//jle::seed(rng);    
+
+using seeder = seed_seq_emulator;
+
+}
+
+
